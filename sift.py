@@ -21,6 +21,7 @@ def cordinates():
                 if pts[j-1] is None or pts[j] is None:
                     return False
                 cv2.line(frame,pts[j],pts[j+1],(0, 255, 255),2)
+        cv2.putText(frame,'x :{0:<7.2f} , y: {1:<7.2f} , z: {2:<7.2f}'.format(x,y,z),(10,20),cv2.FONT_HERSHEY_SIMPLEX,0.75,(0,255,150),1)
         cv2.putText(frame,'vx :{0:<7.2f} , vy: {1:<7.2f} , vz: {2:<7.2f}'.format(dx/dt,dy/dt,dz/dt),(10,frame.shape[0]-10),cv2.FONT_HERSHEY_SIMPLEX,0.75,(0,255,150),1)
     cv2.imshow('Ball Tracking',frame)
     k=cv2.waitKey(5)
